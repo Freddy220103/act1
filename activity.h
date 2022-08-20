@@ -1,8 +1,9 @@
 // =================================================================
 //
 // File: activity.h
-// Author:
-// Date:
+// Author: Alfredo Gómez Mendoza
+// A01704189
+// Date: 19/08/2022
 //
 // =================================================================
 #ifndef ACTIVITY_H
@@ -14,9 +15,15 @@
 //
 // @param n	The maximum limit of the sum.
 // @return	The result of the addition from 1 to n.
+// complexity O(n)
 // =================================================================
-unsigned int sumaIterativa(unsigned int n) {
-	return 0;
+int sumaIterativa(int n) {
+	int res=0, i=1;
+	while (i<=n){
+		res=res+i;
+		i+=1;
+	}
+	return res;
 }
 
 // =================================================================
@@ -25,20 +32,35 @@ unsigned int sumaIterativa(unsigned int n) {
 //
 // @param n	The maximum limit of the sum.
 // @return	The result of the addition from 1 to n.
+// complexity O(1)
 // =================================================================
-unsigned int sumaRecursiva(unsigned int n) {
-	return 0;
+int sumaRecursiva( int n) {
+	int res=1;
+	if(n==1){
+		res=1;
+		return res;
+	}
+	/*else if (n<=2){
+		res=res*2;
+		return res;
+	}*/
+	else{
+		res=sumaRecursiva(n-1)+n;
+		return res;
+	}
+	
 }
 
 // =================================================================
 // sumaRecursiva. Calculate the sum from 1 to n with a mathematical
 // method.
-//
+//nponmas1sobre2
 // @param n	The maximum limit of the sum.
 // @return	The result of the addition from 1 to n.
+// complexity O(n*n)
 // =================================================================
-unsigned int sumaDirecta(unsigned int n) {
-	return 0;
+int sumaDirecta(int n) {
+	return (n*(n+1)/2);
 }
 
 #endif /* ACTIVITY_H */
